@@ -43,7 +43,7 @@ export class ContentCardComponent implements OnInit {
     });
     this.contentList.add({
       id: 4,
-      author:'Ugur Demir',
+      author:'Ugur Demir5',
       title: 'Lorem ipsum dolor sit amet.',
       imgUrl:'https://source.unsplash.com/random/300×300',
       body:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan dolor id nunc consectetur molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque quis leo at erat posuere facilisis. Suspendisse malesuada nulla est, quis suscipit nisl pulvinar at. Aliquam convallis nulla non mauris viverra placerat. Donec sollicitudin ut mauris non laoreet. Curabitur feugiat mattis nulla, non tempus est iaculis eget. Cras a dolor ornare, finibus felis vitae, fermentum tortor. Praesent tincidunt in lectus ac congue. Nullam ut tempor lectus, in malesuada tellus. Curabitur ut posuere massa.'
