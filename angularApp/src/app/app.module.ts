@@ -4,15 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
+import { FormsModule } from '@angular/forms';
+import { SearchTypePipe } from './search-type.pipe';
+import { SearchTitlePipe } from './search-title.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentCardComponent,
-    ContentListComponent
+    ContentListComponent,
+    SearchTypePipe,
+    SearchTitlePipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [ContentListComponent]

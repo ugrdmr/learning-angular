@@ -24,3 +24,6 @@
 :host.is-last{
     border: 2px solid black;
 }
+:host.isFound-true{
+    background: rgba($color: #d20000, $alpha: .2);
+}
