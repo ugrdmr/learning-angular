@@ -1,9 +1,17 @@
 <div class="content-{{ content.id }}">
-  <h1 class="title">{{ content.title }}</h1>
-  <div class="image-wrapper" *ngIf="content.imgUrl">
-  <img (click)="imgClick(content.id)" class="content-image" src="{{ content.imgUrl }}">
+  <h1 appHoverStyle [bottomColour]="'#ce9d13'" class="title">{{ content.title }}</h1>
+  <div class="image-wrapper" *ngIf="content.imgUrl; else noImage">
+    <img (click)="imgClick(content.id)" class="content-image" src="{{ content.imgUrl }}">
   </div>
+  <ng-template #noImage>
+    <div class="image-wrapper no-image">
+      <img  (click)="imgClick(content.id)" class="content-image" src="https://i.picsum.photos/id/870/800/400.jpg?blur=2&grayscale&hmac=YLwcI123GChEUU-fnNFaJhhWEyC5XntIGa0WCj0jBWk">
+      <div class="noImg">No Image Provided</div>
+    </div>
+  </ng-template>
   <p class="body" *ngIf="content.body"> {{ content.body }}</p>
   <h2 class="author">Author: {{ content.author }}</h2>
-  <div class="tags" *ngIf="content.tags">Tags:<a href="#"> {{ content.tags }}</a></div>
+  <div class="tags" *ngIf="content.tags">Tags:
+    <a href="#" *ngFor="let tag of content.tags;"  appHoverStyle [fontWeight]="'bold'"> {{ tag }}</a>
+  </div>
 </div> 

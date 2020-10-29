@@ -7,6 +7,8 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { FormsModule } from '@angular/forms';
 import { SearchTypePipe } from './search-type.pipe';
 import { SearchTitlePipe } from './search-title.pipe';
+import { HoverStyleDirective } from './hover-style.directive';
+import { CardHoverDirective } from './card-hover.directive';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { SearchTitlePipe } from './search-title.pipe';
     ContentCardComponent,
     ContentListComponent,
     SearchTypePipe,
-    SearchTitlePipe
+    SearchTitlePipe,
+    HoverStyleDirective,
+    CardHoverDirective
   ],
   imports: [
     BrowserModule,

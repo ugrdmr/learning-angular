@@ -12,6 +12,14 @@
 .content-image{
     width: 100%;
 }
+.image-wrapper{
+    position: relative;
+}
+.title{
+    box-sizing: border-box;
+    min-height: 50px;
+    cursor: pointer;
+}
 .tags{
     display: flex;
     align-items: center;
@@ -20,6 +28,13 @@
        padding: 5px;
        text-decoration: none;
     }
+}
+.noImg{
+    font-size: 2rem;
+    position: absolute;
+    top: 45%;
+    z-index: 9;
+    left: 10px;
 }
 :host.is-last{
     border: 2px solid black;

@@ -2,17 +2,8 @@
     <input placeholder="" [(ngModel)]="indicator">
     <br><br>
 </div>
-<app-content-card *ngFor="let content of (contentList | searchType:'Student');" [content]="content"
+<app-content-card appCardHover *ngFor="let content of (contentList); first as isFirst; last as isLast" appCardHover [firstIndex]="isFirst || isLast" [content]="content"
 class="content-list-{{content.type}} isFound-{{content | searchTitle:indicator}}">
-                  {{ content }}
+{{ content }}
 </app-content-card>
 
-<app-content-card *ngFor="let content of (contentList | searchType:'Manager');" [content]="content"
-class="content-list-{{content.type}} isFound-{{content | searchTitle:indicator}}">
-                  {{ content }}
-</app-content-card>
-
-<app-content-card *ngFor="let content of (contentList | searchType:'Teacher');" [content]="content"
-class="content-list-{{content.type}} isFound-{{content | searchTitle:indicator}}">
-                  {{ content }}
-</app-content-card>
