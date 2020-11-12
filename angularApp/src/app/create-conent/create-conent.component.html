@@ -1,0 +1,10 @@
+<div class="form-content">
+    <h1>Add a new content:</h1>
+    <input [(ngModel)]="newContent.title" type="text" placeholder="Title"  />
+    <input [(ngModel)]="newContent.body" type="text" placeholder="Body"/>
+    <input [(ngModel)]="newContent.type" type="text" placeholder="Type"/>
+    <input [(ngModel)]="newContent.author" type="text" placeholder="Author"/>
+    <input [(ngModel)]="newContent.imgUrl" type="text" placeholder="ImageUrl"/>
+    <button (click)="addContent()">Add</button>
+    <p class="error"> {{error}}</p>
+  </div>

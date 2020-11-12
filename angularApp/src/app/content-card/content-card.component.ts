@@ -12,7 +12,6 @@ export class ContentCardComponent implements OnInit {
 
   constructor() { 
     
-
   }
 
   imgClick(id:number){

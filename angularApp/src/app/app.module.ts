@@ -9,6 +9,7 @@ import { SearchTypePipe } from './search-type.pipe';
 import { SearchTitlePipe } from './search-title.pipe';
 import { HoverStyleDirective } from './hover-style.directive';
 import { CardHoverDirective } from './card-hover.directive';
+import { CreateConentComponent } from './create-conent/create-conent.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CardHoverDirective } from './card-hover.directive';
     SearchTypePipe,
     SearchTitlePipe,
     HoverStyleDirective,
-    CardHoverDirective
+    CardHoverDirective,
+    CreateConentComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentListComponent implements OnInit {
   contentList: Content[];
+
   indicator: string
   constructor() { 
     this.contentList = [
@@ -62,4 +63,11 @@ export class ContentListComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  cloneArray(newContentFromChild: Content): void{
+    newContentFromChild.id = this.contentList.length;
+    this.contentList.push(newContentFromChild);
+    this.contentList = Object.assign([], this.contentList);
+  }
+  
 }
