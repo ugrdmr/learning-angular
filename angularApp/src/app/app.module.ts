@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { FormsModule } from '@angular/forms';
-import { SearchTypePipe } from './search-type.pipe';
-import { SearchTitlePipe } from './search-title.pipe';
+import { SearchTypePipe } from './pipes/search-type.pipe';
+import { SearchTitlePipe } from './pipes/search-title.pipe';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -15,13 +16,14 @@ import { SearchTitlePipe } from './search-title.pipe';
     ContentCardComponent,
     ContentListComponent,
     SearchTypePipe,
-    SearchTitlePipe
+    SearchTitlePipe,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [],
-  bootstrap: [ContentListComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
