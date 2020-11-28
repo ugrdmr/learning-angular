@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchTypePipe } from './pipes/search-type.pipe';
 import { SearchTitlePipe } from './pipes/search-title.pipe';
 import { MessagesComponent } from './messages/messages.component';
+import { CreateComponentComponent } from './create-component/create-component.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { MessagesComponent } from './messages/messages.component';
     SearchTypePipe,
     SearchTitlePipe,
     MessagesComponent,
+    CreateComponentComponent,
   ],
   imports: [
     BrowserModule,
