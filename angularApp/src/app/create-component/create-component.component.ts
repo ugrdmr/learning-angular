@@ -9,7 +9,7 @@ import {ContentService} from '../services/content.service';
 })
 export class CreateComponentComponent implements OnInit {
   @Output() newEvent = new EventEmitter<Content>();
-  newContent: Content;
+  newContent: any;
   error : string;
 
   constructor(private contentService: ContentService) {
@@ -37,7 +37,7 @@ export class CreateComponentComponent implements OnInit {
       }
       else{
         console.log('emitted', this.newContent.title);
-        this.contentService.addItem(this.newEvent).subscribe(serverItem => {
+        this.contentService.addItem(this.newContent).subscribe(serverItem => {
           item = serverItem;
           this.newEvent.emit(item);
         });
