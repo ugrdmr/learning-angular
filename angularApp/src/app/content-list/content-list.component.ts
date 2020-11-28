@@ -18,9 +18,18 @@ export class ContentListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.contentService.getContentsObs()
-    .subscribe(content => {
-      this.contentList = content;
+      this.contentList = [];
+      this.getTheContentsList();
+  }
+
+  getTheContentsList(): void{
+    this.contentService.getContentsObs().subscribe(gl => {
+      this.contentList = gl;
     });
+  }
+
+  cloneArray(newContentFromChild: Content): void{
+    this.contentList.push(newContentFromChild);
+    this.contentList = Object.assign([], this.contentList);
   }
 }

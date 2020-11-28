@@ -5,17 +5,6 @@
     <input placeholder="" [(ngModel)]="indicator">
     <br><br>
 </div>
-<app-content-card *ngFor="let content of (contentList | searchType:'Student');" [content]="content"
-class="content-list-{{content.type}} isFound-{{content | searchTitle:indicator}}">
-                  {{ content }}
-</app-content-card>
 
-<app-content-card *ngFor="let content of (contentList | searchType:'Manager');" [content]="content"
-class="content-list-{{content.type}} isFound-{{content | searchTitle:indicator}}">
-                  {{ content }}
-</app-content-card>
 
-<app-content-card *ngFor="let content of (contentList | searchType:'Teacher');" [content]="content"
-class="content-list-{{content.type}} isFound-{{content | searchTitle:indicator}}">
-                  {{ content }}
-</app-content-card>
+<app-content-card class="author" *ngFor="let itemList of contentList" [content]="itemList"></app-content-card>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Console } from 'console';
 import {Content} from '../helper-files/content-interface';
 import {ContentService} from '../services/content.service';
 
@@ -29,23 +30,18 @@ export class CreateComponentComponent implements OnInit {
 
   addContent(): void{
     let item: Content;
-
-    const promise = new Promise((success, fail) =>{
-      if(this.newContent.title.trim() === '' || this.newContent.author.trim() === '' || this.newContent.body.trim() === '' || this.newContent.type.trim() === ''){
-        fail('Failure');
+    if(this.newContent.title.trim() === '' || this.newContent.author.trim() === '' || this.newContent.body.trim() === '' || this.newContent.type.trim() === ''){
         this.error = 'Please fill title, body, type and author fields.'
-      }
-      else{
+    }
+    else{
         console.log('emitted', this.newContent.title);
         this.contentService.addItem(this.newContent).subscribe(serverItem => {
+          
           item = serverItem;
+        
           this.newEvent.emit(item);
         });
         this.error = 'Content was added successfully.';
       }
-    });
-    promise.then((success) => console.log(success),
-      (fail) => console.log(fail)
-    );
   }
 }
