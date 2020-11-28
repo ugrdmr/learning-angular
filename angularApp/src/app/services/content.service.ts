@@ -13,10 +13,11 @@ export class ContentService {
         'application/json' })
   };
   constructor(private messageService: MessageService, private http: HttpClient ) { }
-  listOfObservableItems(): Observable<Content[]>{
+  getContentsObs(): Observable<Content[]>{
     this.messageService.add('Content retrieved!');
     return this.http.get<Content[]>('api/content');
   }
+  
   addItem(content: Content): Observable<Content>{
     this.messageService.add('Added!');
     return this.http.post<Content>('api/content', content, this.httpOptions);
