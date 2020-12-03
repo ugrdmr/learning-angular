@@ -7,23 +7,31 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
     
     h1{
       width: 100%;
     }
     input, button{
-      width: calc(100% / 3.1);
-      height: 36px;
+      width: 100%;
       margin-bottom: 10px;
-      border: 1px solid #000000;
-      padding: 0px 10px;
     }
     button{
-      height: 36px;
-      width: calc(100% / 1.51);
+      width: 100%;
+    }
+    .cancel{
+      width: 45px;
+      position: absolute;
+      right: -15px;
+      top: -20px;
+      padding: 0px;
     }
     p{
       width: 100%;
       color: red;
     }
+  }
+  .mat-form-field{
+    padding: 0 !important;
+    width: 45%;
   }

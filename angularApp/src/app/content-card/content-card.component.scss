@@ -2,13 +2,17 @@
   float: left;
   width: calc(50% - 14px);
   display: block;
-  border: 2px dotted #ad9999;
   padding: 10px 15px;
   margin: 0 auto;
   box-sizing: border-box;
   margin-bottom: 5px;
   margin-right: 5px;
 }
+ 
+h1{
+  padding-bottom: 20px;
+}
+
 .content-image{
   width: 100%;
 }

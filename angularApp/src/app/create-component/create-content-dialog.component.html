@@ -1,0 +1,13 @@
+<div class="form-content">
+    <h1>Add a new content:</h1>
+
+<mat-form-field><input matInput [(ngModel)]="newContent.id" placeholder="ID" /></mat-form-field>
+<mat-form-field><input matInput [(ngModel)]="newContent.title" placeholder="Title" /></mat-form-field>
+<mat-form-field><input matInput [(ngModel)]="newContent.type" placeholder="Type" /></mat-form-field>
+<mat-form-field><input matInput [(ngModel)]="newContent.author" placeholder="Author" /></mat-form-field>
+<mat-form-field><input matInput [(ngModel)]="newContent.tags" placeholder="Tags" /></mat-form-field>
+<mat-form-field><input matInput [(ngModel)]="newContent.body" placeholder="Body" /></mat-form-field>
+<mat-form-field><input matInput [(ngModel)]="newContent.imgUrl" placeholder="Image Url" /></mat-form-field>
+<button mat-raised-button color="accent"  [mat-dialog-close]="newContent" cdkFocusInitial>Add Content</button>
+<button mat-fab (click)="onNoClick()" color="warn" class="cancel">X</button>
+</div>

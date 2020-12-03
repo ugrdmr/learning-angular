@@ -1,4 +1,4 @@
-<div class="form-content">
+<!-- <div class="form-content">
     <h1>Add a new content:</h1>
 <input [(ngModel)]="newContent.id" placeholder="ID" />
 <input [(ngModel)]="newContent.title" placeholder="Title" />
@@ -8,4 +8,8 @@
 <input [(ngModel)]="newContent.body" placeholder="Body" />
 <input [(ngModel)]="newContent.imgUrl" placeholder="Image Url" />
 <button class="add" (click)="addContent()">Add Content!</button>
+</div> -->
+
+<div style="text-align: center; padding: 20px;">
+<button mat-fab color="primary"  matTooltip="Add new content!" matBadge="+1" matBadgePosition="before" matBadgeColor="accent"  (click)="openCreateContentDialog()"><mat-icon>add</mat-icon></button>
 </div>
