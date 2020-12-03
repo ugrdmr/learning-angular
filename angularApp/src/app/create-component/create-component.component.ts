@@ -1,7 +1,9 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Console } from 'console';
-import {Content} from '../helper-files/content-interface';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Content } from '../helper-files/content-interface';
 import {ContentService} from '../services/content.service';
+import { MessageService } from '../services/message.service';
+
+
 
 @Component({
   selector: 'app-create-component',
@@ -9,39 +11,30 @@ import {ContentService} from '../services/content.service';
   styleUrls: ['./create-component.component.scss']
 })
 export class CreateComponentComponent implements OnInit {
-  @Output() newEvent = new EventEmitter<Content>();
+  @Output() newContentEvent = new EventEmitter<Content>();
+  @Output() updateContentEvent = new EventEmitter<string>();
   newContent: any;
-  error : string;
-
-  constructor(private contentService: ContentService) {
+  constructor(private contentService: ContentService,private messageService: MessageService) { 
     this.newContent = {
-      id:0,
       title: '',
-      body: '',
-      type: '',
-      author: '',
-      imgUrl: ''
+      imageUrl: ''
     };
-
-   }
+  }
 
   ngOnInit(): void {
-  }
 
-  addContent(): void{
-    let item: Content;
-    if(this.newContent.title.trim() === '' || this.newContent.author.trim() === '' || this.newContent.body.trim() === '' || this.newContent.type.trim() === ''){
-        this.error = 'Please fill title, body, type and author fields.'
-    }
-    else{
-        console.log('emitted', this.newContent.title);
-        this.contentService.addItem(this.newContent).subscribe(serverItem => {
-          
-          item = serverItem;
-        
-          this.newEvent.emit(item);
-        });
-        this.error = 'Content was added successfully.';
-      }
   }
+  addContent(): void{
+    let newContentFromServer: Content;
+    console.log("Trying to add the content to the list", this.newContent);
+    this.contentService.addContent(this.newContent).subscribe(serverContent => {
+      this.messageService.add("Added the content to the list");
+
+      newContentFromServer = serverContent;
+      newContentFromServer.tags = [newContentFromServer.tags[0]]
+      this.newContentEvent.emit(newContentFromServer);
+    });
+  }
+  
+
 }

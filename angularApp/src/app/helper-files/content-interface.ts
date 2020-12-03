@@ -6,4 +6,4 @@ export interface Content{
     author: string;
     imgUrl?: string;
     tags?:string[]
-}
+    }

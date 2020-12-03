@@ -3,33 +3,55 @@ import { Content } from '../helper-files/content-interface';
 import {ContentService} from '../services/content.service';
 import {MessageService} from '../services/message.service';
 
+
+
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss']
 })
+
 export class ContentListComponent implements OnInit {
   contentList: Content[];
-  indicator: string
+  inputSearch:string;
   selectedContent: Content;
+    
+  constructor(private contentService: ContentService, private messageService: MessageService) {
 
-  constructor(private contentService: ContentService, private messageService: MessageService) { 
-  
+
+
+   }
+
+   onSelect(content: Content): void {
+    this.selectedContent = content;
+    this.messageService.add(`You selected content: ${content.title}`);
   }
+
 
   ngOnInit(): void {
-      this.contentList = [];
-      this.getTheContentsList();
+        //  this.contentList = this.contentService.getContents();
+        // this.contentService.getContentsObs()
+        // .subscribe(content => {
+        //   this.contentList = content;
+        // });
+        this.contentList = [];
+        this.getTheContentsList();
   }
-
   getTheContentsList(): void{
-    this.contentService.getContentsObs().subscribe(gl => {
+    this.contentService.getContents().subscribe(gl => {
+      // content came back! maybe log the length
       this.contentList = gl;
     });
   }
 
-  cloneArray(newContentFromChild: Content): void{
+  addContentToList(newContentFromChild: Content): void {
     this.contentList.push(newContentFromChild);
+    // We need to clone the array for the pipe to work
     this.contentList = Object.assign([], this.contentList);
   }
+  updateTheList(message: string): void{
+    console.log(message);
+    this.getTheContentsList();
+  }
+
 }

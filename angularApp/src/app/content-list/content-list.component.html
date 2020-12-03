@@ -1,10 +1,4 @@
-<app-create-component (newEvent)="cloneArray($event)" ></app-create-component>
-
-
-<div class="search-container">
-    <input placeholder="" [(ngModel)]="indicator">
-    <br><br>
+<div class="form-container">
+    <app-create-component (newContentEvent)="addContentToList($event)"></app-create-component>
 </div>
-
-
 <app-content-card class="author" *ngFor="let itemList of contentList" [content]="itemList"></app-content-card>
