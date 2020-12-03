@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
-import { CONTENTLIST } from '../helper-files/contentDb';
+import { CONTENTLIST } from '../helper-files/contentDB';
 
 
 @Injectable({
