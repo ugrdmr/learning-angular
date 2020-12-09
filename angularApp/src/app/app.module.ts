@@ -21,6 +21,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import {MatIconModule} from '@angular/material/icon';
     MessagesComponent,
     CreateComponentComponent,
     CreateContentDialog,
+    ContentDetailComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -48,7 +53,12 @@ import {MatIconModule} from '@angular/material/icon';
     MatDialogModule,
     MatGridListModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule.forRoot([
+      { path: 'content/:id', component: ContentDetailComponent },
+      { path: '', component: ContentListComponent },
+      { path: '**', component: NotFoundComponent }
+    ])
   ],
   providers: [],
   entryComponents:[CreateContentDialog],

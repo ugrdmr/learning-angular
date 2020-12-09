@@ -19,11 +19,14 @@ export class ContentService {
     })
   };
 
+  getContent(id: number): Observable<Content>{
+    return this.http.get<Content>('api/content/' + id);
+  }
 
   getContents(): Observable<Content[]> {
-    return this.http.get<Content[]>('api/fred');
+    return this.http.get<Content[]>('api/content');
   }
   addContent(content: Content): Observable<Content> {
-    return this.http.post<Content>("api/fred", content, this.httpOptions);
+    return this.http.post<Content>("api/content", content, this.httpOptions);
   }
 }

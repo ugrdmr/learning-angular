@@ -4,8 +4,7 @@
       <div class="image-wrapper" *ngIf="content.imgUrl">
       <img (click)="imgClick(content.id)" class="content-image" src="{{ content.imgUrl }}">
       </div>
-      <p class="body" *ngIf="content.body"> {{ content.body }}</p>
       <h2 class="author">Author: {{ content.author }}</h2>
-      <div class="tags" *ngIf="content.tags">Tags:<a href="#"> {{ content.tags }}</a></div>
     </div> 
+    <button mat-raised-button color="warn" [routerLink]="['/content', content.id]" routerLinkActive="active">Details <mat-icon>keyboard_arrow_right</mat-icon></button>
   </mat-card>

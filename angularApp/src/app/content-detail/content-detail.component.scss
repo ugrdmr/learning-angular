@@ -1,0 +1,36 @@
+:host{
+    width: calc(50% - 14px);
+    display: block;
+    padding: 10px 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .backBtn{
+      position: absolute;
+      right: 20px;
+      top: 15px;
+  } 
+
+  h1{
+    padding-bottom: 20px;
+  }
+  
+  .content-image{
+    width: 100%;
+  }
+  .tags{
+    display: flex;
+    align-items: center;
+    a{
+       color:#000000;
+       padding: 5px;
+       text-decoration: none;
+    }
+  }
+  :host.is-last{
+    border: 2px solid black;
+  }
+  :host.isFound-true{
+    background: rgba($color: #d20000, $alpha: .2);
+  }
